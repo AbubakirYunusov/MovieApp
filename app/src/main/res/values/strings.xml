@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Movie App</string>
+
+    <string name="route_splash_screen">SplashScreen</string>
+    <string name="route_home_screen">HomeScreen</string>
+    <string name="route_search_screen">SearchScreen</string>
+    <string name="route_watch_list_screen">WatchListScreen</string>
+    <string name="route_details_screen">DetailsScreen</string>
+    <string name="what_watch">What do you want to watch?</string>
+    <string name="search">Search</string>
+    <string name="internet">Нет подключения к интернету</string>
+    <string name="riplae">Повторить</string>
+
+</resources>
