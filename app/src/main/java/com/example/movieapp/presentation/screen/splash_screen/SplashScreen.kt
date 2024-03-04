@@ -20,7 +20,6 @@ import kotlinx.coroutines.launch
 
 private const val SPLASH_SCREEN_TIME_MILLIS = 3000L
 
-
 @Composable
 fun SplashScreen(
     modifier: Modifier = Modifier,

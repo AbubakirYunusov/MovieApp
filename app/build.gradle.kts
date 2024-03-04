@@ -55,7 +55,6 @@ dependencies {
 
     // Location Services
     implementation ("com.google.android.gms:play-services-location:21.1.0")
-
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
 
     //AsyncImage

@@ -1,10 +1,25 @@
 package com.example.movieapp.presentation.components.bottom_bar
 
-import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.graphics.vector.ImageVector
+import com.example.movieapp.R
 
-data class BottomItem (
+sealed class BottomItem(
     val title: String,
-    val selectedIcon: ImageVector,
-    val unselectedIcon: Painter,
-)
+    val iconId: Int,
+    val route: String,
+) {
+    data object HomeScreen : BottomItem(
+        "Home",
+        R.drawable.home,
+        "HomeScreen"
+    )
+    data object SearchScreen : BottomItem(
+        "Search",
+        R.drawable.search,
+        "SearchScreen"
+    )
+    data object WatchListScreen : BottomItem(
+        "Watch list",
+        R.drawable.path,
+        "WatchListScreen"
+    )
+}

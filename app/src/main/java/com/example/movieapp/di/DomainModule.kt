@@ -1,6 +1,8 @@
 package com.example.movieapp.di
 
 import com.example.movieapp.domain.repository.GetCurrentMovieRepository
+import com.example.movieapp.domain.use_cases.movie_info.DefaultGetMovieInfoUseCase
+import com.example.movieapp.domain.use_cases.movie_info.GetMovieInfoUseCase
 import com.example.movieapp.domain.use_cases.now_playing.DefaultGetCurrentMovieNowPlayingUseCase
 import com.example.movieapp.domain.use_cases.now_playing.GetCurrentMovieNowPlayingUseCase
 import com.example.movieapp.domain.use_cases.popular.DefaultGetCurrentMoviePopularUseCase
@@ -17,7 +19,6 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 class DomainModule {
-
     @Provides
     fun providesGetCurrentMoviePopularUseCase(
         repository: GetCurrentMovieRepository
@@ -46,4 +47,10 @@ class DomainModule {
         repository = repository
     )
 
+    @Provides
+    fun providesGetMovieInfoUseCase(
+        repository: GetCurrentMovieRepository
+    ): GetMovieInfoUseCase = DefaultGetMovieInfoUseCase(
+        repository = repository
+    )
 }
