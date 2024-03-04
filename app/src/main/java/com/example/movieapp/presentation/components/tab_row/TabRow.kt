@@ -24,10 +24,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.movieapp.presentation.components.item.MovieItem
 import com.example.movieapp.presentation.screen.home_screen.HomeScreenUiState
+import com.example.movieapp.presentation.theme.dp3
+import com.example.movieapp.presentation.theme.dp4
+import com.example.movieapp.presentation.theme.dp45
+import com.example.movieapp.presentation.theme.sp20
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -35,20 +37,21 @@ import kotlinx.coroutines.launch
 fun TabRow(
     uiState: HomeScreenUiState.Success,
     modifier: Modifier = Modifier,
+    onNavigateToInfo: (Int) -> Unit,
 ) {
-    val listof = listOf(
+    val listOf = listOf(
         uiState.moviePopular,
         uiState.movieTopRated,
         uiState.movieUpcoming,
         uiState.movieNowPlaying,
     )
     val coroutineScope = rememberCoroutineScope()
-    val pagerState = rememberPagerState { listof.size }
+    val pagerState = rememberPagerState { listOf.size }
     val defaultIndicator = @Composable { tabPositions: List<TabPosition> ->
         Box(
             modifier = modifier
                 .tabIndicatorOffset(tabPositions[pagerState.currentPage])
-                .height(3.dp)
+                .height(dp3)
                 .background(
                     color = Color.Gray
                 ),
@@ -63,32 +66,40 @@ fun TabRow(
             indicator = defaultIndicator,
             containerColor = Color.Transparent
         ) {
-            listof.forEachIndexed { index, _ ->
+            listOf.forEachIndexed { index, _ ->
                 val header = getListOfPageByPosition(index)
                 Tab(text = {
                     Text(
                         text = header,
                         color = MaterialTheme.colorScheme.onBackground,
-                        fontSize = 20.sp,
+                        fontSize = sp20,
                         fontWeight = FontWeight.Bold
                     )
                 }, selected = pagerState.currentPage == index, onClick = {
                     coroutineScope.launch {
                         pagerState.animateScrollToPage(index)
                     }
-                })
+                }
+                )
             }
         }
         HorizontalPager(
             state = pagerState,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(4.dp),
+                .padding(dp4),
         ) { movie ->
-            val scope = listof[movie]
-            LazyVerticalGrid(columns = GridCells.Fixed(3)) {
+            val scope = listOf[movie]
+            LazyVerticalGrid(
+                modifier = Modifier.padding(bottom = dp45),
+                columns = GridCells.Fixed(3),
+            ) {
                 items(items = scope, key = { it.movieId }) {
-                    MovieItem(imageUrl = it.posterPath)
+                    MovieItem(
+                        imageUrl = it.posterPath,
+                        movieId = it.movieId,
+                        onNavigateToInfo = onNavigateToInfo
+                    )
                 }
             }
         }

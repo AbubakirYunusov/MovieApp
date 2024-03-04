@@ -1,10 +1,10 @@
-package com.example.movieapp.presentation.models
+package com.example.movieapp.presentation.models.movie
 
 import androidx.compose.runtime.Stable
 import java.io.Serializable
 
 @Stable
-data class MoviePresentationModel(
+data class MovieUiModel(
     val backdropPath: String,
     val genreIds: List<Int>,
     val movieId: Int,
@@ -19,7 +19,7 @@ data class MoviePresentationModel(
     val voteCount: Int,
 ) : Serializable {
     companion object {
-        val unknown = MoviePresentationModel(
+        val unknown = MovieUiModel(
             backdropPath = "",
             genreIds = listOf(0),
             movieId = 0,

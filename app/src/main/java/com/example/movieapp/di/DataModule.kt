@@ -16,14 +16,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module
 @InstallIn(SingletonComponent::class)
 class DataModule {
-
     @Provides
     fun providesWeatherService(
         retrofit: Retrofit
     ): MovieService {
         return retrofit.create(MovieService::class.java)
     }
-
     @Provides
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder().baseUrl(BASE_URl)

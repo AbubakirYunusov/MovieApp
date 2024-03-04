@@ -1,9 +1,9 @@
-package com.example.movieapp.data.mappers
+package com.example.movieapp.data.mappers.movie
 
-import com.example.movieapp.data.models.MovieDataModel
-import com.example.movieapp.data.models.MovieResponseDataModel
-import com.example.movieapp.domain.models.MovieDomainModel
-import com.example.movieapp.domain.models.MovieResponseDomainModel
+import com.example.movieapp.data.models.movie.MovieDataModel
+import com.example.movieapp.data.models.movie.MovieResponseDataModel
+import com.example.movieapp.domain.models.movie.MovieDomainModel
+import com.example.movieapp.domain.models.movie.MovieResponseDomainModel
 
 fun MovieDataModel.toDomain() = MovieDomainModel(
     backdropPath = backdropPath,

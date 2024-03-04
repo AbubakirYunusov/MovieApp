@@ -6,9 +6,17 @@
     <string name="route_search_screen">SearchScreen</string>
     <string name="route_watch_list_screen">WatchListScreen</string>
     <string name="route_details_screen">DetailsScreen</string>
+    <string name="route_bottom_navigation">BottomNavGraph</string>
+    <string name="splashNavigation">SplashNavigation</string>
+
     <string name="what_watch">What do you want to watch?</string>
     <string name="search">Search</string>
+    <string name="text_watch_list">Watch List</string>
     <string name="internet">Нет подключения к интернету</string>
-    <string name="riplae">Повторить</string>
-
+    <string name="try_again">Повторить</string>
+    <string name="text_action">Action</string>
+    <string name="text_about_movie">About Movie</string>
+    <string name="search_screen">Search screen</string>
+    <string name="watch_list_screen">WatchList Screen</string>
+    <string name="text_detail">Detail</string>
 </resources>

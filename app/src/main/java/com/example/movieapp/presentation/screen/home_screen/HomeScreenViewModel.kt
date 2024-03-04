@@ -3,7 +3,7 @@ package com.example.movieapp.presentation.screen.home_screen
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.movieapp.data.base.model.ResponseStatus
-import com.example.movieapp.data.mappers.toUi
+import com.example.movieapp.data.mappers.movie.toUi
 import com.example.movieapp.domain.use_cases.now_playing.GetCurrentMovieNowPlayingUseCase
 import com.example.movieapp.domain.use_cases.popular.GetCurrentMoviePopularUseCase
 import com.example.movieapp.domain.use_cases.top_rated.GetCurrentMovieTopRatedUseCase

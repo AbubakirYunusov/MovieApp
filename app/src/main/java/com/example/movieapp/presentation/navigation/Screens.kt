@@ -5,14 +5,11 @@ import com.example.movieapp.R
 
 @SuppressLint("SupportAnnotationUsage")
 sealed class Screens( val route: String) {
-
     data object SplashScreen : Screens(R.string.route_splash_screen.toString())
-
     data object HomeScreen : Screens(R.string.route_home_screen.toString())
-
     data object SearchScreen : Screens(R.string.route_search_screen.toString())
-
     data object WatchListScreen : Screens(R.string.route_watch_list_screen.toString())
-
     data object DetailsScreen : Screens(R.string.route_details_screen.toString())
+    data object BottomNavGraph : Screens(R.string.route_bottom_navigation.toString())
+    data object SplashNavGraph : Screens(R.string.splashNavigation.toString())
 }

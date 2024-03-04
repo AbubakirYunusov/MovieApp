@@ -40,7 +40,7 @@ fun ErrorScreen(
                     .fillMaxWidth()
                     .padding(horizontal = dp16)
             ) {
-                Text(text = stringResource(id = R.string.riplae))
+                Text(text = stringResource(id = R.string.try_again))
             }
         }
     }

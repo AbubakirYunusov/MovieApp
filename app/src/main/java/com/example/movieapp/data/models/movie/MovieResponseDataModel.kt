@@ -1,4 +1,4 @@
-package com.example.movieapp.data.models
+package com.example.movieapp.data.models.movie
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
@@ -6,7 +6,7 @@ import java.io.Serializable
 data class MovieResponseDataModel(
     @SerializedName("results")
     val results: List<MovieDataModel>
-) : Serializable  {
+) : Serializable {
     val unknown =  MovieResponseDataModel (
         results = emptyList()
     )

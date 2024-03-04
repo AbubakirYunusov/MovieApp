@@ -7,7 +7,6 @@ import retrofit2.HttpException
 import retrofit2.Response
 
 abstract class BaseDataSource {
-
     suspend fun <T> invokeResponseRequest(request: suspend () -> Response<T>): ResultStatus<T> {
         return try {
             val response = request()
